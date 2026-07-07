@@ -1,5 +1,4 @@
-# 🔐 Prince's Password Strength Tester & Generator
-# A fun & interactive CLI tool to analyze password strength and generate strong passwords
+# Password Strength Tester & Generator
 
 import string
 import random
@@ -15,8 +14,7 @@ def check_strength(pwd):
     score = sum([upper, lower, digit, special])
     
     print("\n🔍 Analyzing password strength...\n")
-    time.sleep(1.5)  # Simulate some processing time
-
+    time.sleep(1.5)  
     if length < 6:
         print("❌ Bro that’s shorter than a TikTok attention span.")
     elif score < 3:
@@ -29,16 +27,12 @@ def check_strength(pwd):
         print("⚠️ Meh. You tryna get hacked or what?")
 
 def generate_password(length=12):
-    # 🎯 Using letters, digits, and special symbols
     chars = string.ascii_letters + string.digits + string.punctuation
     return ''.join(random.choice(chars) for _ in range(length))
 
-# --- Main Program ---
 print("🔐 Welcome to the Password Strength Tester & Generator!\n")
-
 pwd = input("📝 Enter your password to check strength: ")
 check_strength(pwd)
-
 choice = input("\n🚀 Wanna generate a strong password? (y/n): ")
 if choice.lower() == 'y':
     try:
@@ -57,6 +51,4 @@ else:
 
 print("\n🙌 Thanks for using the Password Strength Tester & Generator!")
 print("Stay safe out there! 🔒")
-print("👑 Created by Prince - Your friendly neighborhood password guru! 🦸‍♂")
-# --- End of program ---
-
+print("👑 Created by Prince - Your friendly neighborhood password guru!")
